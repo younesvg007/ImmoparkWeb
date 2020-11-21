@@ -1,0 +1,27 @@
+
+.modal{
+    padding-left: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 900px;
+    background: whitesmoke;
+}
+
+.modal-doc{
+    padding-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 600px;
+    background: whitesmoke;
+}
+
+.title{
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Trebuchet MS', serif;
+    color: #142f8d;
+    background-position: center;
+}
+
+

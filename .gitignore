@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/immopark2-web/node_modules
+/immopark2-web/.pnp
+/immopark2-web/.pnp.js
+
+# testing
+/immopark2-web/coverage
+
+# production
+/immopark2-web/build
+
+# misc
+/immopark2-web/.DS_Store
+/immopark2-web/.env.local
+/immopark2-web/.env.development.local
+/immopark2-web/.env.test.local
+/immopark2-web/.env.production.local
+
+/immopark2-web/npm-debug.log*
+/immopark2-web/yarn-debug.log*
+/immopark2-web/yarn-error.log*
