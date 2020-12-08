@@ -35,10 +35,11 @@ export const ModalContract = props => {
     const history = useHistory(); // history.push('/example');
 
     const UpdateContract = async (values) =>{
-        await axios.put( `http://localhost:51915/immopark/api/contract/${contractValues.id}`, values)
+        //await axios.put( `http://localhost:51915/immopark/api/contract/${contractValues.id}`, values)
+        await axios.put( `http://localhost:5000/immopark/api/contract/${contractValues.id}`, values)
             .then(response => (console.log(response)))
-            .then(() => history.push( '/contract'))
-            //.then(() => window.location.href = '/allproperties')
+            //.then(() => history.push( '/contract'))
+            .then(() => window.location.href = '/allcontracts')
             .catch(error => (console.log(error)));
     }
 
@@ -108,23 +109,23 @@ export const ModalContract = props => {
 
                 <Formik
                     initialValues={{
-                        startDate: '01/01/2021',
-                        endDate: '01/01/2024',
+                        startDate: '01/02/2021',
+                        endDate: '01/02/2024',
                         duration: 36,
                         indexBase: '23',
                         amountGarantee: 1400,
-                        signatureDate: '01/12/2020',
+                        signatureDate: '01/01/2021',
                         indexEntryWater: 20,
                         indexEntryGaz: 25,
                         indexEntryElectricity: 30,
                         cautionPaid: false,
-                        paymentCautionDate: 1500,
+                        paymentCautionDate: '15/01/2021',
                         isFirstMonthPaid: false,
-                        entryDate: '01/01/2021',
-                        outDate: '01/01/2021',
-                        indexOutWater: 20,
-                        indexOutGaz: 25,
-                        indexOutElectricity: 30,
+                        entryDate: '31/01/2021',
+                        outDate: '31/01/2024',
+                        indexOutWater: 30,
+                        indexOutGaz: 35,
+                        indexOutElectricity: 40,
                     }}
                     validationSchema={SignupSchema}
                     onSubmit={(values) => {

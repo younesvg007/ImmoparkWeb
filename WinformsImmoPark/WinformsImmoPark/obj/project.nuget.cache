@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "xjy4dJX57U1Fof0OB5uom3bZWE++XlDXTIDI7Oka3UbnX5grXIPCNH/s71jdr9m3wnFIPNqPx3rg33HpmzhIvA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\youne\\Desktop\\BAC 03\\Q5\\WEB 3 AND C#4\\ProjetWEB\\Projet Web_CSharp_Q5 Younes_VanGrootenbril\\WinformsImmoPark\\WinformsImmoPark\\WinformsImmoPark.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\youne\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

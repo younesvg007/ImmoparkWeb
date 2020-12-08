@@ -54,10 +54,11 @@ export default function ClientForm(){
 
     const CreateClient = async (values) =>{
         //e.preventDefault(); //
-       await axios.post( "http://localhost:51915/immopark/api/client/", values)
+       //await axios.post( "http://localhost:51915/immopark/api/client/", values)
+       await axios.post( "http://localhost:5000/immopark/api/client/", values)
             .then(response => (console.log(response)))
             .then(() => notify(values.firstName,values.lastName))
-            //.then(() => window.location.href = '/addproperty')
+            .then(() => window.location.href = '/allclients')
             .catch(error => (console.log(error)));
     }
 

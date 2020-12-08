@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import "yup-phone";
 import {Formik} from 'formik';
 import axios from 'axios';
-//import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 const useStyle = makeStyles(theme => ({
@@ -35,28 +35,35 @@ export default function ClientForm(){
     const classes = useStyle();
     const [clients, setClients] = useState([]);
     const [properties, setProperties] = useState([]);
-    //const history = useHistory(); // history.push('/example');
+    const history = useHistory(); // history.push('/example');
 
     const notify = () => toast.success(`A New Contract has been successfully added !`);
 
     const CreateContract = async (values) =>{
         //e.preventDefault(); //
-        await axios.post( "http://localhost:51915/immopark/api/contract/", values)
+        //await axios.post( "http://localhost:51915/immopark/api/contract/", values)
+        await axios.post( "http://localhost:5000/immopark/api/contract/", values)
             .then(response => (console.log(response)))
             .then(() => notify())
-            //.then(() => window.location.href = '/addproperty')
+            .then(() => window.location.href = '/allcontracts')
+            //.then(() => history.push('/allcontracts'))
             .catch(error => (console.log(error)));
     }
     //const phoneReg = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
     const getClients = async () =>{
-        await axios.get(`http://localhost:51915/immopark/api/client`)
-            .then(data => setClients(data.data)); //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+        //await axios.get(`http://localhost:51915/immopark/api/client`)
+        await axios.get(`http://localhost:5000/immopark/api/client`)
+            .then(data => setClients(data.data)) //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+            .catch(error => (console.log(error)));
+
     }
 
     const getProperties = async () =>{
-        await axios.get(`http://localhost:51915/immopark/api/property`)
-            .then(data => setProperties(data.data)); //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+        //await axios.get(`http://localhost:51915/immopark/api/property`)
+        await axios.get(`http://localhost:5000/immopark/api/property`)
+            .then(data => setProperties(data.data)) //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+            .catch(error => (console.log(error)));
     }
 
     useEffect(() => {
@@ -128,23 +135,23 @@ export default function ClientForm(){
         <div>
             <Formik
                 initialValues={{
-                    startDate: '01/01/2021',
-                    endDate: '01/01/2024',
+                    startDate: '01/02/2021',
+                    endDate: '01/02/2024',
                     duration: 36,
                     indexBase: '23',
                     amountGarantee: 1400,
-                    signatureDate: '01/12/2020',
+                    signatureDate: '01/01/2021',
                     indexEntryWater: 20,
                     indexEntryGaz: 25,
                     indexEntryElectricity: 30,
                     cautionPaid: false,
-                    paymentCautionDate: 1500,
+                    paymentCautionDate: '15/01/2021',
                     isFirstMonthPaid: false,
-                    entryDate: '01/01/2021',
-                    outDate: '01/01/2021',
-                    indexOutWater: 20,
-                    indexOutGaz: 25,
-                    indexOutElectricity: 30,
+                    entryDate: '31/01/2021',
+                    outDate: '31/01/2024',
+                    indexOutWater: 30,
+                    indexOutGaz: 35,
+                    indexOutElectricity: 40,
                     idProperty: '',
                     idClient: ''
                 }}

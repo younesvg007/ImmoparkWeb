@@ -1,0 +1,26 @@
+﻿h1 {
+    text-align: center;
+    color: green;
+    padding-bottom: 50px;
+    font-size: 30px;
+    font-family: 'Tahoma', sans-serif;
+    
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid gray;
+    padding: 30px;
+    font-size: 21px;
+    font-family: 'Tahoma', sans-serif;
+    text-align: center;
+}
+
+table th {
+    background-color: dodgerblue;
+    color: white;
+}

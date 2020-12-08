@@ -44,11 +44,12 @@ export default function PropertyForm(){
     const notify = (type, address) => toast.success(`${type} has been successfully added at the address ${address} !`);
 
     const CreateProperty = async (e) =>{
-        e.preventDefault(); //
-        await axios.post( "http://localhost:51915/immopark/api/property/", values)
+        e.preventDefault();
+        //await axios.post( "http://localhost:51915/immopark/api/property/", values)
+        await axios.post( "http://localhost:5000/immopark/api/property/", values)
             .then(response => (console.log(response)))
             .then(() => notify(values.type,values.address))
-            //.then(() => window.location.href = '/addproperty')
+            .then(() => window.location.href = '/allproperties')
             .catch(error => (console.log(error)));
     }
 

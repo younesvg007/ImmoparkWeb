@@ -9,7 +9,6 @@ namespace ImmoParkApp.DTOs
     public class ClientUpdateDto
     {
 
-
         public string Civility { get; set; }
 
         public string Sexe { get; set; }

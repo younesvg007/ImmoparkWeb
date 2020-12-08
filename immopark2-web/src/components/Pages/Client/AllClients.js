@@ -22,15 +22,19 @@ export default function AllClients(){
     }
 
     const displayClients = async () =>{
-        await axios.get(`http://localhost:51915/immopark/api/client`)
-            .then(data => setClients(data.data)); //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+        //await axios.get(`http://localhost:51915/immopark/api/client`)
+        await axios.get(`http://localhost:5000/immopark/api/client`)
+            .then(data => setClients(data.data)) //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+            .catch(error => (console.log(error)));
     }
 
     const deleteClient = async (id, firstName, lastName) => {
-        await axios.delete(`http://localhost:51915/immopark/api/client/${id}`)
+        //await axios.delete(`http://localhost:51915/immopark/api/client/${id}`)
+        await axios.delete(`http://localhost:5000/immopark/api/client/${id}`)
             .then(response => (console.log(response)))
             .then(() => setClients(clients.filter(client => client.natRegister !== id)))
             .then(() => notify(firstName, lastName))
+            .catch(error => (console.log(error)));
 
     }
 

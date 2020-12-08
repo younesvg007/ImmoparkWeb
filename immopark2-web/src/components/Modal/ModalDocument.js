@@ -6,6 +6,8 @@ import * as Yup from 'yup';
 import {useHistory} from "react-router-dom";
 //import axios from "axios";
 import './ModalComponent.css';
+import axios from "axios";
+import download from "downloadjs";
 
 
 const useStyle = makeStyles(theme => ({
@@ -29,9 +31,96 @@ export const ModalDocument = props => {
     const classes = useStyle();
     const history = useHistory(); // history.push('/example');
 
-    const SignupSchema = Yup.object().shape({
+    const generateLeaseContractWord = async (id) => {
+        const fileName = `LeaseContract N°${id}`;
+        await axios.get(`http://localhost:5000/immopark/api/contract/wordgenerator/leasecontract/${id}`, {
+            responseType: 'blob', // had to add this one here
+        })
+            .then(response => {
+                const content = response.headers['content-type'];
+                download(response.data, fileName,content);
+                console.log(response);
+            })
+            //.then(() => notifyDownload(id))
+            .catch(error => console.log(error));
 
-    });
+    }
+
+    const generateDepositClientWord = async (id) => {
+        const fileName = `DepositClient`;
+        await axios.get(`http://localhost:5000/immopark/api/contract/wordgenerator/depositclient/${id}`, {
+            responseType: 'blob', // had to add this one here
+        })
+            .then(response => {
+                const content = response.headers['content-type'];
+                download(response.data, fileName,content);
+                console.log(response);
+            })
+            //.then(() => notifyDownload(id))
+            .catch(error => console.log(error));
+
+    }
+
+    const generateStateOfEntryWord = async (id) => {
+        const fileName = `StateOfEntry`;
+        await axios.get(`http://localhost:5000/immopark/api/contract/wordgenerator/stateofentry/${id}`, {
+            responseType: 'blob', // had to add this one here
+        })
+            .then(response => {
+                const content = response.headers['content-type'];
+                download(response.data, fileName,content);
+                console.log(response);
+            })
+            //.then(() => notifyDownload(id))
+            .catch(error => console.log(error));
+
+    }
+
+    const generateStateOfExitWord = async (id) => {
+        const fileName = `StateOfExit`;
+        await axios.get(`http://localhost:5000/immopark/api/contract/wordgenerator/stateofexit/${id}`, {
+            responseType: 'blob', // had to add this one here
+        })
+            .then(response => {
+                const content = response.headers['content-type'];
+                download(response.data, fileName,content);
+                console.log(response);
+            })
+            //.then(() => notifyDownload(id))
+            .catch(error => console.log(error));
+
+    }
+
+    const generateEarlyLeaseTerminationWord = async (id) => {
+        const fileName = `EarlyLeaseTermination`;
+        await axios.get(`http://localhost:5000/immopark/api/contract/wordgenerator/earlyleasetermination/${id}`, {
+            responseType: 'blob', // had to add this one here
+        })
+            .then(response => {
+                const content = response.headers['content-type'];
+                download(response.data, fileName,content);
+                console.log(response);
+            })
+            //.then(() => notifyDownload(id))
+            .catch(error => console.log(error));
+
+    }
+
+    const generateLeaseCongerWord = async (id) => {
+        const fileName = `LeaseConger`;
+        await axios.get(`http://localhost:5000/immopark/api/contract/wordgenerator/leaseconger/${id}`, {
+            responseType: 'blob', // had to add this one here
+        })
+            .then(response => {
+                const content = response.headers['content-type'];
+                download(response.data, fileName,content);
+                console.log(response);
+            })
+            //.then(() => notifyDownload(id))
+            .catch(error => console.log(error));
+
+    }
+
 
     return (
 
@@ -41,70 +130,74 @@ export const ModalDocument = props => {
             onClickAway={() => setModalDocIsOpen(false)}
         >
             <Paper className={"modal-doc"}>
+                <Grid container spacing={1}>
+                    <Grid item xs={12} alignItems={"center"}>
+                        <div >
+                            <h1 className={"title"} > Click the document contract n°{contractValues.id} for downloading</h1>
+                        </div><br/>
+                    </Grid>
+                    <Grid container alignItems="flex-end" justify="center">
+                        <Button
+                            onClick={() => generateLeaseContractWord(contractValues.id)}
+                            size="medium"
+                            color="primary"
+                            variant="contained"
+                            className={classes.button}>
+                            Lease Contract
+                        </Button>
+                    </Grid>
+                    <Grid container alignItems="flex-end" justify="center">
+                        <Button
+                            onClick={() => generateDepositClientWord(contractValues.id)}
+                            size="medium"
+                            color="primary"
+                            variant="contained"
+                            className={classes.button}>
+                            Deposit For Client
+                        </Button>
+                    </Grid>
+                    <Grid container alignItems="flex-end" justify="center">
+                        <Button
+                            onClick={() => generateStateOfEntryWord(contractValues.id)}
+                            size="medium"
+                            color="primary"
+                            variant="contained"
+                            className={classes.button}>
+                            State of Entry
+                        </Button>
+                    </Grid>
+                    <Grid container alignItems="flex-end" justify="center">
+                        <Button
+                            onClick={() => generateStateOfExitWord(contractValues.id)}
+                            size="medium"
+                            color="primary"
+                            variant="contained"
+                            className={classes.button}>
+                            State of Exit
+                        </Button>
+                    </Grid>
+                    <Grid container alignItems="flex-end" justify="center">
+                        <Button
+                            onClick={() => generateEarlyLeaseTerminationWord(contractValues.id)}
+                            size="medium"
+                            color="primary"
+                            variant="contained"
+                            className={classes.button}>
+                            Early Lease Termination
+                        </Button>
+                    </Grid>
+                    <Grid container alignItems="flex-end" justify="center">
+                        <Button
+                            onClick={() => generateLeaseCongerWord(contractValues.id)}
+                            size="medium"
+                            color="primary"
+                            variant="contained"
+                            className={classes.button}>
+                            Lease Conger
+                        </Button>
+                    </Grid>
+                </Grid><br/>
 
-                <Formik
-                    initialValues={{
-                        checked: [],
-                    }}
-                    //validationSchema={SignupSchema}
-                    onSubmit={(values) => {
-                        console.log(values);
-                    }}
-                >
-                    {props => (
-
-                        <form className={classes.root} onSubmit={props.handleSubmit}>
-                            <Grid container>
-                                <Grid item xs={12} alignItems={"center"}>
-                                    <div >
-                                        <h1 className={"title"} > Check Documents that you need</h1>
-                                    </div>
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <FormControl component="fieldset" className={classes.formControl}>
-                                        <FormGroup>
-                                            <FormControlLabel
-                                                control={<Checkbox onChange={props.handleChange} name="leaseContract" />}
-                                                label="Lease contract"
-                                            />
-                                            <FormControlLabel
-                                                control={<Checkbox onChange={props.handleChange} name="caution" />}
-                                                label="Caution"
-                                            />
-                                            <FormControlLabel
-                                                control={<Checkbox onChange={props.handleChange} name="stateEntry" />}
-                                                label="State of entry"
-                                            />
-                                            <FormControlLabel
-                                                control={<Checkbox onChange={props.handleChange} name="stateExit" />}
-                                                label="State of exit "
-                                            />
-                                            <FormControlLabel
-                                                control={<Checkbox onChange={props.handleChange} name="leaseTermination" />}
-                                                label="Early termination of lease"
-                                            />
-                                            <FormControlLabel
-                                                control={<Checkbox onChange={props.handleChange} name="leaseHoliday" />}
-                                                label="Lease holiday"
-                                            />
-                                        </FormGroup>
-                                    </FormControl>
-                                </Grid>
-                                <Grid container alignItems="flex-end" justify="center">
-                                    <Button
-                                        variant="contained"
-                                        color="primary"
-                                        className={classes.button}
-                                        type='submit'
-                                        disabled={!props.isValid}
-                                    >
-                                        Download
-                                    </Button>
-                                </Grid>
-                            </Grid>
-                        </form>
-                    )}
-                </Formik>
             </Paper>
 
         </Modal>

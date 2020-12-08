@@ -13,6 +13,7 @@ import AddClient from "./components/Pages/Client/AddClient";
 import AllContract from "./components/Pages/Contract/AllContract";
 import NewContract from "./components/Pages/Contract/NewContract";
 
+
 function App() {
     return (
         <Router>

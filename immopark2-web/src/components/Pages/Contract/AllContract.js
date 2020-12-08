@@ -3,6 +3,7 @@ import {Button, Card, CardActionArea, CardActions, Grid, makeStyles, Paper} from
 import {toast, ToastContainer} from "react-toastify";
 import {ModalContract} from "../../Modal/ModalContract";
 import {ModalDocument} from "../../Modal/ModalDocument";
+import download from 'downloadjs';
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -22,17 +23,38 @@ export default function AllContract(){
         toast.error(`The contract n° ${id} has been successfully deleted !`);
     }
 
+    const notifyDownload = (id) => {
+        toast.success(`The contract n° ${id} has been successfully downloaded !`);
+    }
+
     const displayContracts = async () =>{
-        await axios.get(`http://localhost:51915/immopark/api/contract`)
-            .then(data => setContracts(data.data)); //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+        //await axios.get(`http://localhost:51915/immopark/api/contract`)
+        await axios.get(`http://localhost:5000/immopark/api/contract`)
+            .then(data => setContracts(data.data)) //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+            .catch(error => (console.log(error)));
     }
 
     const deleteContract = async (id) => {
-        await axios.delete(`http://localhost:51915/immopark/api/contract/${id}`)
+        await axios.delete(`http://localhost:5000/immopark/api/contract/${id}`)
             .then(response => (console.log(response)))
             .then(() => setContracts(contracts.filter(contract => contract.id !== id)))
             .then(() => notify(id))
+            .catch(error => (console.log(error)));
     }
+
+    /*const generateContractPDF = async (id) => {
+        const fileName = `LeaseContract N°${id}`;
+        await axios.get(`http://localhost:5000/immopark/api/contract/pdfgenerator/${id}`, {
+            responseType: 'blob', // had to add this one here
+            })
+            .then(response => {
+                const content = response.headers['content-type'];
+                download(response.data, fileName,content)
+            })
+            .then(() => notifyDownload(id))
+            .catch(error => console.log(error));
+
+    }*/
 
     useEffect(() => {
         displayContracts();
@@ -143,7 +165,7 @@ export default function AllContract(){
                                         </Grid>
                                         <Grid item xs={6}>
                                             <div>
-                                                <p >{contract.indexEntryGaz} M²</p>
+                                                <p >{contract.indexEntryGaz} M³</p>
                                             </div>
                                         </Grid>
                                         <Grid item xs={6}>
@@ -266,6 +288,7 @@ export default function AllContract(){
                                     <Grid container spacing={1}>
                                         <Grid item xs={12} className="btn-download">
                                             <Button
+                                                //onClick={() => generateContractPDF(contract.id)}
                                                 onClick={() => {
                                                     setModalDocIsOpen(true);
                                                     setContractValues(contract);

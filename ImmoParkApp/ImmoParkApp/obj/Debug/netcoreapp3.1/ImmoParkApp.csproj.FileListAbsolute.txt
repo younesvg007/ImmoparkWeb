@@ -121,8 +121,6 @@ C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Yo
 C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.csprojAssemblyReference.cache
 C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.AssemblyInfoInputs.cache
 C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.AssemblyInfo.cs
-C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.csproj.CoreCompileInputs.cache
-C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.RazorTargetAssemblyInfo.cache
 C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.csproj.CopyComplete
 C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\staticwebassets\ImmoParkApp.StaticWebAssets.Manifest.cache
@@ -130,3 +128,10 @@ C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Yo
 C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.dll
 C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.pdb
 C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.genruntimeconfig.cache
+C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\bin\Debug\netcoreapp3.1\DinkToPdf.dll
+C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Portable.dll
+C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\bin\Debug\netcoreapp3.1\Syncfusion.DocIO.Portable.dll
+C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\bin\Debug\netcoreapp3.1\Syncfusion.OfficeChart.Portable.dll
+C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.csproj.CoreCompileInputs.cache
+C:\Users\youne\Desktop\BAC 03\Q5\WEB 3 AND C#4\ProjetWEB\Projet Web_CSharp_Q5 Younes_VanGrootenbril\ImmoParkApp\ImmoParkApp\obj\Debug\netcoreapp3.1\ImmoParkApp.MvcApplicationPartsAssemblyInfo.cache

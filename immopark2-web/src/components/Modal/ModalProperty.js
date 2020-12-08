@@ -40,10 +40,11 @@ export const ModalProperty = props => {
 
     const UpdateProperty = async (values) =>{
          //console.log(propertyValues);
-        await axios.put( `http://localhost:51915/immopark/api/property/${propertyValues.id}`, values)
+        //await axios.put( `http://localhost:51915/immopark/api/property/${propertyValues.id}`, values)
+        await axios.put( `http://localhost:5000/immopark/api/property/${propertyValues.id}`, values)
             .then(response => (console.log(response)))
-            .then(() => history.push( '/property'))
-            //.then(() => window.location.href = '/allproperties')
+            //.then(() => history.push( '/property'))
+            .then(() => window.location.href = '/allproperties')
             .catch(error => (console.log(error)));
     }
 

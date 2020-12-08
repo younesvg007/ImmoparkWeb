@@ -23,15 +23,17 @@ export default function AllProperties() {
     }
 
     const displayProperties = async () =>{
-        await axios.get(`http://localhost:51915/immopark/api/property`)
-            .then(data => setProperties(data.data)); //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+        await axios.get(`http://localhost:5000/immopark/api/property`)
+            .then(data => setProperties(data.data)) //then => ca renvoi une promesse: renvoi des donnes qui nexise pas sur front end que tu va receptionner grace a api et que tu peux lleur attribuer un comportement
+            .catch(error => (console.log(error)));
     }
 
     const deleteProperty = async (id, address, type) => {
-        await axios.delete(`http://localhost:51915/immopark/api/property/${id}`)
+        await axios.delete(`http://localhost:5000/immopark/api/property/${id}`)
             .then(response => (console.log(response)))
             .then(() => setProperties(properties.filter(property => property.id !== id)))
             .then(() => notify(address,type))
+            .catch(error => (console.log(error)));
     }
 
     useEffect(() => {

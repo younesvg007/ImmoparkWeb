@@ -52,10 +52,11 @@ export const ModalClient = props => {
     const history = useHistory(); // history.push('/example');
 
     const UpdateClient = async (values) =>{
-        await axios.put( `http://localhost:51915/immopark/api/client/${clientValues.natRegister}`, values)
+        //await axios.put( `http://localhost:51915/immopark/api/client/${clientValues.natRegister}`, values)
+        await axios.put( `http://localhost:5000/immopark/api/client/${clientValues.natRegister}`, values)
             .then(response => (console.log(response)))
-            .then(() => history.push( '/client'))
-            //.then(() => window.location.href = '/allproperties')
+            //.then(() => history.push( '/client'))
+            .then(() => window.location.href = '/allclients')
             .catch(error => (console.log(error)));
     }
 
